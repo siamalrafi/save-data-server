@@ -10,7 +10,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
-// app.use(morgan("dev"));
+app.use(morgan("dev"));
 
 const uri = "mongodb+srv://save_data:RuvNZGoI1VSZBwoz@cluster0.ksaovkw.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
@@ -85,4 +85,4 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-})
+});
